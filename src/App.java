@@ -8,17 +8,20 @@ public class App {
   private Scanner scanner = new Scanner(System.in);
 
   App () {
+    days.add(new Day1());
+    days.add(new Day2());
+    days.add(new Day3());
     days.add(new Day4());
   }
 
   public void startMenu() {
-    System.out.println("Welcome to Advent of Code 2022!");
+    System.out.println(System.lineSeparator() + "Welcome to Advent of Code 2022!");
     System.out.println("1. Run all days.");
     System.out.println("2. Run a specific day.");
     System.out.println("q. Exit.");
 
     String input = scanner.nextLine();
-
+    System.out.println();
     switch (input) {
       case "1":
         runAllDays();
@@ -44,6 +47,8 @@ public class App {
       day.run();
     }
 
+    System.out.print("Press enter to continue...");
+    scanner.nextLine();
     startMenu();
   }
 
@@ -60,6 +65,8 @@ public class App {
       runSpecificDay();
     }
 
+    System.out.print("Press enter to continue...");
+    scanner.nextLine();
     startMenu();
   }
 }

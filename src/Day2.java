@@ -2,17 +2,16 @@ package src;
 
 import java.util.Arrays;
 
-public class Day2 {
-  public static void main(String[] args) {
-    FileReader fileReader = new FileReader();
-    String data = fileReader.readFile("src/data/input2.txt");
-    String[] rounds = data.split(System.lineSeparator());
-    Day2 day2 = new Day2();
-    day2.partOne(rounds);
-    day2.partTwo(rounds);
+public class Day2 extends Day {
+  private String[] rounds;
+
+  Day2() {
+    super(2);
+    this.rounds = data.split(System.lineSeparator());
+    this.unit = "points";
   }
 
-  private void partOne (String[] rounds) {
+  public String partOne() {
     int score = 0;
     String[] draw = {"A X", "B Y", "C Z"};
     String[] win = {"A Y", "B Z", "C X"};
@@ -27,10 +26,10 @@ public class Day2 {
       } 
     }
 
-    System.out.println(score);
+    return String.valueOf(score);
   }
 
-  private void partTwo (String[] rounds) {
+  public String partTwo() {
     int score = 0;
     String[] one = {"A Y", "B X", "C Z"};
     String[] two = {"A Z", "B Y", "C X"};
@@ -54,6 +53,6 @@ public class Day2 {
       }
     }
 
-    System.out.println(score);
+    return String.valueOf(score);
   }
 }

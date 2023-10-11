@@ -3,13 +3,15 @@ package src;
 import java.util.Arrays;
 
 public class Day4 extends Day {
+  private String[] lines;
 
   Day4() {
     super(4);
+    this.lines = data.split(System.lineSeparator());
+    this.unit = "ranges";
   }
 
-  public String partOne(String data) {
-    String[] lines = data.split(System.lineSeparator());
+  public String partOne() {
     int sumFullyCovered = 0;
 
     for (String line : lines) {
@@ -27,8 +29,7 @@ public class Day4 extends Day {
     return String.valueOf(sumFullyCovered);
   }
 
-  public String partTwo(String data) {
-    String[] lines = data.split(System.lineSeparator());
+  public String partTwo() {
     int sumFullyCovered = 0;
 
     for (String line : lines) {

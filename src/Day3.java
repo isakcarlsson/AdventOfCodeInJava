@@ -1,20 +1,15 @@
 package src;
 
-import java.util.Arrays;
+public class Day3 extends Day {
+  private String[] rucksacks;
 
-
-public class Day3 {
-
-  public static void main(String[] args) {
-    FileReader fileReader = new FileReader();
-    String data = fileReader.readFile("src/data/input3.txt");
-    String[] rucksacks = data.split(System.lineSeparator());
-    Day3 day3 = new Day3();
-    day3.partTwo(rucksacks);
-    
+  Day3() {
+    super(3);
+    this.rucksacks = data.split(System.lineSeparator());
+    this.unit = "priortized items";
   }
 
-  private void partOne(String[] rucksacks) {
+  public String partOne() {
     int sumOfPriorities = 0;
     
     for (String rucksack : rucksacks) {
@@ -33,10 +28,10 @@ public class Day3 {
       }
     }
 
-    System.out.println(sumOfPriorities);
+    return String.valueOf(sumOfPriorities);
   }
 
-  private void partTwo(String[] rucksacks) {
+  public String partTwo() {
     int sumOfPriorities = 0;
     
     for (int i = 0; i < rucksacks.length; i+=3) {
@@ -52,6 +47,6 @@ public class Day3 {
       }
     }
 
-    System.out.println(sumOfPriorities);
+    return String.valueOf(sumOfPriorities);
   }
 }

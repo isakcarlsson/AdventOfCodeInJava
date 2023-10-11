@@ -2,22 +2,22 @@ package src;
 
 public abstract class Day {
   FileReader fileReader = new FileReader();
-  String dataFile;
+  String data;
   int dayNumber;
+  String unit;
 
   Day (int dayNumber) {
-    dataFile = "src/data/input" + dayNumber + ".txt"; 
+    data = fileReader.readFile("src/data/input" + dayNumber + ".txt");
     this.dayNumber = dayNumber;
   };
 
   void run() {
-    String data = fileReader.readFile(dataFile);
     System.out.print("Day " + dayNumber);
-    System.out.print(" part one: " + partOne(data));
-    System.out.println(" part two: " + partTwo(data));
+    System.out.print(" part one: " + partOne() + " " + unit + ",");
+    System.out.println(" part two: " + partTwo() + " " + unit + ".");
   };
   
-  abstract String partOne(String data);
+  abstract String partOne();
   
-  abstract String partTwo(String data);
+  abstract String partTwo();
 }
