@@ -12,7 +12,7 @@ public class Day5 extends Day {
     parts[1] = parts[1].trim();
 
     String[] secondLines = parts[1].split(System.lineSeparator());
-    System.out.println("Hej:" + secondLines[0]);
+    
   }
 
   public String partOne() {
