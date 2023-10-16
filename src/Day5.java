@@ -9,12 +9,26 @@ public class Day5 extends Day {
   Day5() {
     super(5);
     this.unit = "";
-    
-    parseInput();
   }
 
   public String partOne() {
-    return "";
+    parseInput();
+
+    for (int i = 0; i < moves.size(); i++) {
+      int[] move = moves.get(i);
+
+      for (int j = 0; j < move[0]; j++) {
+        stacks.get(move[2] - 1).add(stacks.get(move[1] - 1).remove(stacks.get(move[1] - 1).size() - 1));
+      }
+    }
+
+    String result = "";
+
+    for (ArrayList<Character> stack : stacks) {
+      result += stack.get(stack.size() - 1);
+    }
+
+    return result;
   }
 
   public String partTwo() {
@@ -40,7 +54,10 @@ public class Day5 extends Day {
 
       for (int j = 0; j < line.length; j++) {
         Character box = line[j].charAt(1);
-        stacks.get(j).add(0, box);
+        
+        if (box != ' ') {
+          stacks.get(j).add(0, box);
+        }
       }
     }
    
