@@ -31,10 +31,6 @@ public class Day5 extends Day {
     
     for (int i = 0; i < moves.size(); i++) {
       int[] move = moves.get(i);
-
-      if (i == 10) {
-        int j = 1;
-      }
       
       List<Character> temp = stacks.get(move[1] - 1).subList(stacks.get(move[1] - 1).size() - move[0], stacks.get(move[1] - 1).size());
       stacks.get(move[2] - 1).addAll(temp);
