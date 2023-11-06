@@ -13,6 +13,7 @@ public class App {
     days.add(new Day3());
     days.add(new Day4());
     days.add(new Day5());
+    days.add(new Day6());
   }
 
   public void startMenu() {
@@ -63,6 +64,7 @@ public class App {
       days.get(dayNumber - 1).run();
     } catch (Exception e) {
       System.out.println("Invalid input.");
+      e.printStackTrace();
       runSpecificDay();
     }
 
